@@ -36,4 +36,5 @@ pip install rpi-ws281x
 * robotLight.py: unnecessary
 * GUIfindline.py: unnecessary
 * GUImove.py: unnecessary
+* setup.py: redundant
 * Instruction.txt: unnecessary (no information provided)
