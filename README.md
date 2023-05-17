@@ -14,5 +14,26 @@ Adeept is a technical service team of open source software and hardware. Dedicat
 
 ## Dependencies
 ```
-pip install RPi.GPIO
+pip install RPi.GPIO  
+pip install rpi-ws281x
 ```
+
+## Deleted files
+* LED.py: no LED strip available
+* LEDapp.py: no LED strip available
+* findline.py: unnecessary
+* FPV.py: unnecessary
+* FPVtest.py: unnecessary
+* camera_opencv.py: unnecessary
+* app.py: unnecessary
+* appserver.py: unnecessary
+* appserverAP.py: unnecessary
+* webServer.py: unnecessary
+* SR.py: unnecessary
+* server.py: unnecessary
+* serverTest.py: unnecessary
+* OLED.py: unnecessary
+* robotLight.py: unnecessary
+* GUIfindline.py: unnecessary
+* GUImove.py: unnecessary
+* Instruction.txt: unnecessary (no information provided)
