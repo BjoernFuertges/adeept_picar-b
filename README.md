@@ -41,3 +41,6 @@ pip install Adafruit-PCA9685
 * GUImove.py: unnecessary
 * setup.py: redundant
 * Instruction.txt: unnecessary (no information provided)
+
+## Questions
+* Are RPIservo and servo redundant?
