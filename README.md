@@ -16,7 +16,10 @@ Adeept is a technical service team of open source software and hardware. Dedicat
 ```
 pip install RPi.GPIO  
 pip install rpi-ws281x
+pip install Adafruit-PCA9685
 ```
+
+**You have to activate the i2c interface**
 
 ## Deleted files
 * LED.py: no LED strip available
