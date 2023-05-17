@@ -5,6 +5,9 @@
 # E-mail      : support@adeept.com
 # Author      : William
 # Date        : 2018/10/12
+
+# Lamps at the front
+
 import RPi.GPIO as GPIO
 import time
 

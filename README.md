@@ -10,3 +10,9 @@ Adeept is a technical service team of open source software and hardware. Dedicat
  Technical Support:  support@adeept.com<br/>
  Customer Service:   service@adeept.com<br/>
  Website:            www.adeept.com<br/>
+
+
+## Dependencies
+```
+pip install RPi.GPIO
+```
