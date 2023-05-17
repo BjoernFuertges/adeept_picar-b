@@ -39,6 +39,7 @@ pip install Adafruit-PCA9685
 * robotLight.py: unnecessary
 * GUIfindline.py: unnecessary
 * GUImove.py: unnecessary
+* switch.py: unnecessary
 * setup.py: redundant
 * Instruction.txt: unnecessary (no information provided)
 
