@@ -140,7 +140,7 @@ def destroy():
 
 if __name__ == '__main__':
 	RGB.setup()
-	RGB.police()
+	RGB.police(4)
 	try:
 		speed_set = 60
 		setup()
