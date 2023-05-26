@@ -10,3 +10,34 @@ Adeept is a technical service team of open source software and hardware. Dedicat
  Technical Support:  support@adeept.com<br/>
  Customer Service:   service@adeept.com<br/>
  Website:            www.adeept.com<br/>
+
+
+## Dependencies
+```
+pip install RPi.GPIO  
+pip install rpi-ws281x
+pip install Adafruit-PCA9685
+```
+
+**You have to activate the i2c interface**
+
+## Deleted files
+* LED.py: no LED strip available
+* LEDapp.py: no LED strip available
+* findline.py: unnecessary
+* FPV.py: unnecessary
+* FPVtest.py: unnecessary
+* camera_opencv.py: unnecessary
+* app.py: unnecessary
+* appserver.py: unnecessary
+* appserverAP.py: unnecessary
+* webServer.py: unnecessary
+* SR.py: unnecessary
+* server.py: unnecessary
+* serverTest.py: unnecessary
+* OLED.py: unnecessary
+* robotLight.py: unnecessary
+* GUIfindline.py: unnecessary
+* GUImove.py: unnecessary
+* setup.py: redundant
+* Instruction.txt: unnecessary (no information provided)
