@@ -32,6 +32,53 @@ right_backward= 1
 pwn_A = 0
 pwm_B = 0
 
+class Move_Command:
+	stop_working : bool
+	speed : int
+	direction : str
+	turn : str
+	radius : float
+
+	def __init__(self) -> None:
+		self.stop_working = False
+		self.speed = 0
+		self.direction = 'forward'
+		self.turn = 'no'
+		self.radius = 0.8
+
+	def set_stop_working(self, stop_working : bool) -> None:
+		self.stop_working = stop_working
+
+	def set_speed(self, speed : int) -> None:
+		if speed >= 0:
+			self.speed = speed
+
+	def set_direction(self, direction : str) -> None:
+		if direction == 'forward' or direction == 'backward' or direction == 'no':
+			self.direction = direction
+
+	def set_turn(self, turn : str) -> None:
+		if turn == 'left' or turn == 'right' or turn == 'no':
+			self.turn = turn
+
+	def set_radius(self, radius : float) -> None:
+		self.radius = radius
+
+	def get_stop_working(self) -> bool:
+		return self.stop_working
+
+	def get_speed(self) -> int:
+		return self.speed		
+	
+	def get_direction(self) -> str:
+		return self.direction
+	
+	def get_turn(self) -> str:
+		return self.turn
+	
+	def get_radius(self) -> float:
+		return self.radius
+
 def motorStop() -> None:#Motor stops
 	GPIO.output(Motor_A_Pin1, GPIO.LOW)
 	GPIO.output(Motor_A_Pin2, GPIO.LOW)
@@ -137,6 +184,25 @@ def destroy():
 	motorStop()
 	GPIO.cleanup()             # Release resource
 
+def move_handler(in_q):
+	mc : Move_Command
+	while True:
+		# Get some data
+		probably_new_mc = in_q.get()
+		if probably_new_mc != None:
+			mc = probably_new_mc
+			in_q.task_done()
+
+		
+		if mc != None:
+			if mc.get_stop_working:
+				break
+			
+			move(mc.get_speed(), mc.get_direction(), mc.get_turn(), mc.get_radius())
+
+		# Process the data..
+        # Indicate completion
+		#in_q.task_done()
 
 if __name__ == '__main__':
 	RGB.setup()
