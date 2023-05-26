@@ -140,14 +140,16 @@ def destroy():
 
 if __name__ == '__main__':
 	RGB.setup()
-	RGB.police(4)
+	RGB.yellow()
+	#RGB.police(4)
 	try:
-		speed_set = 60
+		speed_set = 100
 		setup()
 		move(speed_set, 'forward', 'no', 0.8)
 		time.sleep(1.3)
 		motorStop()
 		destroy()
+		RGB.green()
 	except KeyboardInterrupt:
 		destroy()
 
