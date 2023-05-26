@@ -28,8 +28,7 @@ def ui(out_q):
             mc = Move_Command()
             mc.set_stop_working(True)
             out_q.put(mc)
-            exit
-            # exit
+            break
         # else: do nothing
           
 # Create the shared queue and launch both threads
