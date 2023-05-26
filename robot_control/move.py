@@ -149,7 +149,7 @@ if __name__ == '__main__':
 		time.sleep(1.3)
 		motorStop()
 		destroy()
-		RGB.green()
+		RGB.pink()
 	except KeyboardInterrupt:
 		destroy()
 
