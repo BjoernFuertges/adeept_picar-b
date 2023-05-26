@@ -186,7 +186,7 @@ def destroy():
 	motorStop()
 	GPIO.cleanup()             # Release resource
 
-def move_handler(in_q):
+def move_handler(in_q) -> None:
 	if setup_completed == False:
 		RGB.setup()
 		RGB.red()
@@ -198,7 +198,7 @@ def move_handler(in_q):
 		mc = in_q.get()
 
 		if mc != None:
-			if mc.get_stop_working:
+			if mc.get_stop_working():
 				motorStop()
 				RGB.pink()
 				destroy()
