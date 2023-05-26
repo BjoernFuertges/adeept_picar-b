@@ -189,7 +189,9 @@ def destroy():
 def move_handler(in_q):
 	if setup_completed == False:
 		RGB.setup()
-		RGB.yellow()
+		RGB.red()
+		setup()
+		RGB.blue()
 
 	while True:
 		# Get some data
@@ -198,12 +200,13 @@ def move_handler(in_q):
 		if mc != None:
 			if mc.get_stop_working:
 				motorStop()
-				RGB.green()
+				RGB.pink()
 				destroy()
 				print("that is the end")
 				in_q.task_done()
 				break
 			
+			RGB.green()
 			move(mc.get_speed(), mc.get_direction(), mc.get_turn(), mc.get_radius())
 			in_q.task_done()
 
