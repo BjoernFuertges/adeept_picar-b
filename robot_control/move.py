@@ -77,7 +77,7 @@ def motor_left(status : int, direction : int, speed : int) -> None:#Motor 2 posi
 			pwm_B.ChangeDutyCycle(speed)
 
 
-def motor_right(status : int, direction : int, speed : int) -> int:#Motor 1 positive and negative rotation
+def motor_right(status : int, direction : int, speed : int) -> None:#Motor 1 positive and negative rotation
 	if status == 0: # stop
 		GPIO.output(Motor_A_Pin1, GPIO.LOW)
 		GPIO.output(Motor_A_Pin2, GPIO.LOW)
@@ -93,7 +93,6 @@ def motor_right(status : int, direction : int, speed : int) -> int:#Motor 1 posi
 			GPIO.output(Motor_A_Pin2, GPIO.HIGH)
 			pwm_A.start(0)
 			pwm_A.ChangeDutyCycle(speed)
-	return direction
 
 
 def move(speed : int, direction : str, turn : str, radius : float = 0.6):   # 0 < radius <= 1  
