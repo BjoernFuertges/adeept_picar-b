@@ -32,6 +32,8 @@ right_backward= 1
 pwn_A = 0
 pwm_B = 0
 
+setup_completed = False
+
 class Move_Command:
 	stop_working : bool
 	speed : int
@@ -185,20 +187,25 @@ def destroy():
 	GPIO.cleanup()             # Release resource
 
 def move_handler(in_q):
-	mc : Move_Command
+	if setup_completed == False:
+		RGB.setup()
+		RGB.yellow()
+
 	while True:
 		# Get some data
-		probably_new_mc = in_q.get()
-		if probably_new_mc != None:
-			mc = probably_new_mc
-			in_q.task_done()
+		mc = in_q.get()
 
-		
 		if mc != None:
 			if mc.get_stop_working:
+				motorStop()
+				RGB.green()
+				destroy()
+				print("that is the end")
+				in_q.task_done()
 				break
 			
 			move(mc.get_speed(), mc.get_direction(), mc.get_turn(), mc.get_radius())
+			in_q.task_done()
 
 		# Process the data..
         # Indicate completion
