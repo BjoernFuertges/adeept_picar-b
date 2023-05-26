@@ -148,8 +148,9 @@ if __name__ == '__main__':
 		move(speed_set, 'forward', 'no', 0.8)
 		time.sleep(1.3)
 		motorStop()
+		RGB.green()
 		destroy()
-		RGB.pink()
+		print("that is the end")
 	except KeyboardInterrupt:
 		destroy()
 
